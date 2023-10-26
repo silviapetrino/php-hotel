@@ -57,7 +57,7 @@ $hotels = [
 
 
       <div class="container py-5">
-            <table class="table table-hover ">
+      <table class="table table-hover ">
         <thead>
           <tr>
             <th class="bg-primary text-white">Nome Hotel</th>
@@ -76,7 +76,7 @@ $hotels = [
           <tr>
             <th class="bg-primary text-white" scope="row">Parcheggio</th>
             <?php foreach($hotels as $hotel): ?>
-            <td><?php echo $hotel['parking'] ?></td>
+            <td><?php echo ($hotel['parking']) ? ("&#10004;") : ("&#10060;") ?></td>
             <?php endforeach ;?>
           </tr>
           <tr>
