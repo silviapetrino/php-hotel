@@ -48,19 +48,54 @@ $hotels = [
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
   <title>Hotels</title>
 </head>
 <body>
 
-<div>
-    <?php foreach($hotels as $hotel): ?>
-      <li>
-        <?php echo $hotel['name'] . "<br />" . 
-        $hotel['description'] . "<br />" . 
-        $hotel['parking'] . "<br />".
-        $hotel['vote'] . "<br />".
-        $hotel['distance_to_center'] . "<br />"?></li>
-    <?php endforeach ;?>
+
+
+      <div class="container py-5">
+            <table class="table table-hover ">
+        <thead>
+          <tr>
+            <th class="bg-primary text-white">Nome Hotel</th>
+            <?php foreach($hotels as $hotel): ?>
+            <th scope="col"><?php echo $hotel['name'] ?></th>
+            <?php endforeach ;?>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th class="bg-primary text-white" scope="row">Descrizione</th>
+            <?php foreach($hotels as $hotel): ?>
+            <td><?php echo $hotel['description'] ?></td>
+            <?php endforeach ;?>
+          </tr>
+          <tr>
+            <th class="bg-primary text-white" scope="row">Parcheggio</th>
+            <?php foreach($hotels as $hotel): ?>
+            <td><?php echo $hotel['parking'] ?></td>
+            <?php endforeach ;?>
+          </tr>
+          <tr>
+            <th class="bg-primary text-white" scope="row">Voto</th>
+            <?php foreach($hotels as $hotel): ?>
+            <td><?php echo $hotel['vote'] ?></td>
+            <?php endforeach ;?>
+          </tr>
+          <tr>
+            <th class="bg-primary text-white" scope="row">Distanza dal centro</th>
+            <?php foreach($hotels as $hotel): ?>
+            <td><?php echo $hotel['distance_to_center'] ?></td>
+            <?php endforeach ;?>
+          </tr>
+
+
+        </tbody>
+      </table>
+        
   </div>
 </body>
 </html>
